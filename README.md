@@ -1,13 +1,13 @@
-# Исследование объявлений о продаже квартир
+# Study of ads for the sale of apartments
 
-*В нашем распоряжении данные сервиса Яндекс.Недвижимость — архив объявлений о продаже квартир в Санкт-Петербурге и соседних населённых пунктов за несколько лет. Нужно научиться определять рыночную стоимость объектов недвижимости. Наша задача — установить параметры. Это позволит построить автоматизированную систему: она отследит аномалии и мошенническую деятельность.* 
+*We have at our disposal the data of the Yandex.Realty service - an archive of ads for the sale of apartments in St. Petersburg and neighboring settlements for several years. You need to learn how to determine the market value of real estate. Our task is to set the parameters. This will allow you to build an automated system: it will track anomalies and fraudulent activity.*
 
-*По каждой квартире на продажу доступны два вида данных. Первые вписаны пользователем, вторые — получены автоматически на основе картографических данных. Например, расстояние до центра, аэропорта, ближайшего парка и водоёма.*
+*Two types of data are available for each apartment for sale. The first ones are entered by the user, the second ones are obtained automatically on the basis of cartographic data. For example, the distance to the city center, airport, nearest park and body of water.*
 
-## Описания проекта
+## Project descriptions
 
 
 
-| Название проекта | Описание | Используемые библиотеки | 
-| :---------------------- | :---------------------- | :---------------------- |
-| [Исследование объявлений о продаже квартир](https://github.com/limenbah/Sales-of-apartments-research/tree/main/Sales-of-apartments-research) |Изучение время продажи квартиры. Исключение редких и выбивающиеся значений. Факторы больше всего влияющие на стоимость квартиры? У квартир в Санкт-Петербурге какая область входит в центр. Сегмент квартир в центре. Влияют ли следующие параметры: площадь, цена, число комнат, высота потолков на цену. | *pandas, matplotlib* |
+| Project name | Description | Used Libraries |
+| :--------------------- | :--------------------- | :--------------------- |
+| [Studying apartment listings](https://github.com/limenbah/Sales-of-apartments-research/tree/main/Sales-of-apartments-research) |Studying apartment sale times. Exclusion of rare and outliers. What are the most important factors affecting the price of an apartment? For apartments in St. Petersburg, which area is included in the center. Segment of apartments in the center. Do the following parameters affect the price: area, price, number of rooms, ceiling height. | *pandas, matplotlib* |
