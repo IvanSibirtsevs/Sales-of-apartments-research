@@ -1,71 +1,71 @@
-# Исследование объявлений о продаже квартир
+# Study of ads for the sale of apartments
 
-***В нашем распоряжении данные сервиса Яндекс.Недвижимость — архив объявлений о продаже квартир в Санкт-Петербурге и соседних населённых пунктов за несколько лет. Нужно научиться определять рыночную стоимость объектов недвижимости. Наша задача — установить параметры. Это позволит построить автоматизированную систему: она отследит аномалии и мошенническую деятельность.*** 
+***We have at our disposal the data of the Yandex.Realty service - an archive of ads for the sale of apartments in St. Petersburg and neighboring settlements for several years. You need to learn how to determine the market value of real estate. Our task is to set the parameters. This will make it possible to build an automated system: it will track anomalies and fraudulent activity.***
 
-**По каждой квартире на продажу доступны два вида данных. Первые вписаны пользователем, вторые — получены автоматически на основе картографических данных. Например, расстояние до центра, аэропорта, ближайшего парка и водоёма.**
+**Two types of data are available for each apartment for sale. The first ones are entered by the user, the second ones are obtained automatically on the basis of cartographic data. For example, the distance to the city center, airport, nearest park and body of water.**
 
-- Изучение время продажи квартиры.
-- Исключение редких и выбивающиеся значений
-- Факторы больше всего влияющие на стоимость квартиры?
-- У квартир в Санкт-Петербурге какая область входит в центр
-- Сегмент квартир в центре. Влияют ли следующие параметры: площадь, цена, число комнат, высота потолков на цену.
-
-
-### Шаг 1. Открытие файла с данными и изучение общей информации. 
-- Пустые значения в living_area, ceiling_height, living_area, is_apartment,balcony, cityCenters_nearest, parks_around3000, parks_nearest, ponds_around3000,ponds_nearest, days_exposition  
-- Неверный тип данных Почти во всех стобцах
-
-### Шаг 2. Предобработка данных
-
-### Шаг 3. Посчитать и добавьть в таблицу
-
-### Шаг 4. Провести исследовательский анализ данных и выполнить инструкции:
-
-***Средняя площадь квартир около 50 метров Самые частые квартиры имеют 2-3 комнаты Средняя высота потолков чуть больше 2.5 метров В гистограмме с ценой очень большой разброс(Есть очень дешевая недвижимость и очень дорогая)***
-
-***Имеются очень большие выбросы. больше 500 дней думаю это связано с неликвидной недвижемостью или люди посто забывают снимать обявления с площадок.
-Больше всего квартир продаются в течение 3 месяцев.
-Быстро это в течение меясца, а вот долго это болше полугода***
-
-***Средняя площадь квартир от 30 до 70 метров(Так-же присутствуют довольно большие квартиры до 900 метров)***
-200 это то число после которого идут большие выбросы. Высчитал я его с помощью 75% квантиля.
-
-***Цена зависит от размера квартиры. Чем больше площадь, тем больше цена***
-
-***Самые дорогие квартиры с 8 комнатами и цена тоже сильно зависит от количества комнат***
-
-***Удаленность о центра влияет на цену, но чем дальше тем цена почти не меняется***
-
-***Самый дешевые квартиры на первом этаже, а вот на последнем и остальных стоят примерно одинаково
-( Я думаю это связано с решетками на окнах и шумом ).***
-
-***Самые дорогие квартиры выставляют на продажу в будничные дни.***
-
-***Самые дешевые квартиры выставляются с конца весны и начала лета. В остальные месяцы примно одинаков***
-
-***Вывод:***
-- Цена зависит от размера квартиры. Так же количество комнат тоже сильно влияет на цену,
-- Но как не странно квартиры в самом центре и на окраине центральной части города стоят примерно одинаково.
-- Самый дешевые квартиры на первом этаже, а вот на последнем и остальных стоят примерно одинаково ( Я думаю это связано с решетками на окнах и шумом ). 
-- Самые дорогие квартиры выставляют на продажу в будничные дни.
-- Самые дешевые квартиры выставляются с конца весны и начала лета.
-- Год публикации на цену не влияет 
-- Стоимость жилья упала с 2014 по 2015 и начала немного востанавливаться с 2018 по 2019
-
-***Самый дорогой город для жизни это Санкт-Питербург, а вот самый дешовый Выборг***
-
-***Центральная зона находиться на растояни 3-4 километров от центра города.***
-
-***Гистограммы похожи, но квартиры центре во всем чуть лучше. Кроме цены***
+- Studying the time of sale of the apartment.
+- Exclusion of rare and outliers
+- Factors most affecting the cost of an apartment?
+- For apartments in St. Petersburg, which area is included in the center
+- A segment of apartments in the center. Do the following parameters affect the price: area, price, number of rooms, ceiling height.
 
 
-- Жители центра продают более дешовую недвижемость в выходные  
-- Так же самые дешовые квартиры продаются не только в конце весны, но и зимой под новый год
-- Еще наглядно видно что чем дальше от центра чем дешевле. 
+### Step 1. Open the data file and examine the general information.
+- Empty values ​​in living_area, ceiling_height, living_area, is_apartment,balcony, cityCenters_nearest, parks_around3000, parks_nearest, ponds_around3000,ponds_nearest, days_exposition
+- Wrong data type in almost all columns
 
-### Шаг 5. Общий вывод
-***На цену квартиры влияет все. От расстояния до центра, до количества комнат.***
-- Самые важные параметры это количество комнат и площадь квартиры.
-- Самые дешовые квартры находяться на первом этаже
-- Квартиры в центре дороже и маленьше по площади.
-- Самые дорогие квартры в Питере, а вот самые дешовые в Выборге
+### Step 2. Data preprocessing
+
+### Step 3. Calculate and add to table
+
+### Step 4. Conduct an exploratory data analysis and follow the instructions:
+
+***The average area of ​​apartments is about 50 meters The most frequent apartments have 2-3 rooms The average ceiling height is a little more than 2.5 meters There is a very large spread in the histogram with the price (There are very cheap real estate and very expensive) ***
+
+***There are very large outliers. more than 500 days, I think this is due to illiquid real estate or people constantly forget to remove ads from sites.
+Most apartments are sold within 3 months.
+It’s fast for a month, but for a long time it’s more than six months ***
+
+***The average area of ​​apartments is from 30 to 70 meters (There are also quite large apartments up to 900 meters)***
+200 is the number after which there are large outliers. I calculated it using the 75% quantile.
+
+***The price depends on the size of the apartment. The larger the area, the higher the price***
+
+***The most expensive apartments with 8 rooms and the price also strongly depends on the number of rooms***
+
+***Remoteness from the center affects the price, but the farther away the price almost does not change***
+
+*** The cheapest apartments are on the first floor, but on the top and the rest they cost about the same
+(I think this is due to the bars on the windows and the noise).***
+
+***The most expensive apartments are put up for sale on weekdays.***
+
+***The cheapest apartments are exhibited from the end of spring and the beginning of summer. The rest of the months are pretty much the same***
+
+***Conclusion:***
+- The price depends on the size of the apartment. The number of rooms also greatly affects the price,
+- But strange as it may seem, apartments in the very center and on the outskirts of the central part of the city cost about the same.
+- The cheapest apartments are on the first floor, but on the top floor and the rest they cost about the same (I think this is due to the bars on the windows and noise).
+- The most expensive apartments are put up for sale on weekdays.
+- The cheapest apartments are exhibited from the end of spring and the beginning of summer.
+- The year of publication does not affect the price
+- Housing prices fell from 2014 to 2015 and started to recover slightly from 2018 to 2019
+
+***The most expensive city to live in is St. Petersburg, but the cheapest is Vyborg***
+
+***The central zone is located at a distance of 3-4 kilometers from the city center.***
+
+***Histograms are similar, but flats in the center are slightly better in everything. Except price***
+
+
+- Residents of the center sell cheaper properties on weekends
+- Also, the cheapest apartments are sold not only at the end of spring, but also in the winter before the new year
+- You can clearly see that the farther from the center the cheaper.
+
+### Step 5. General conclusion
+***Everything affects the price of an apartment. From the distance to the center, to the number of rooms.***
+- The most important parameters are the number of rooms and the area of ​​the apartment.
+- The cheapest apartments are on the first floor
+- Apartments in the center are more expensive and smaller in area.
+- The most expensive apartments in St. Petersburg, but the cheapest in Vyborg
